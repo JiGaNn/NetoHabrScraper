@@ -1,11 +1,13 @@
 from time import sleep
-from selenium.webdriver import Chrome
+from selenium.webdriver import Chrome, ChromeOptions
 from selenium.webdriver.common.by import By
 
 
 KEYWORDS = ['claude code', 'ux', 'devops', 'oracle', 'dart']
 
-driver = Chrome()
+options = ChromeOptions()
+options.add_argument('--headless')
+driver = Chrome(options)
 driver.get('https://habr.com/ru/all/')
 sleep(5)
 
